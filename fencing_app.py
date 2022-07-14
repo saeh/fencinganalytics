@@ -5,8 +5,9 @@ import pandas as pd
 import streamlit as st
 from datetime import datetime
 
-st. set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
+st.markdown('# Find Your Fencers')
 
 def get_tournaments(from_date, to_date):
   url = f'https://fencingtimelive.com/tournaments/list/data?from={from_date}&to={to_date}'
@@ -110,19 +111,20 @@ for ename in epicked:
   f = get_competitors(eid)
   fencers += f
 
-df = pd.DataFrame(fencers)
-df = df.loc[:,['name','location','event_date','event_name','competitor_Club(s)','competitor_Division','competitor_Country','competitor_Name','competitor_Status','competitor_Rank']]
-df.columns = ['Tournament','Location','Date','Event','Club','Division','Country','Name','Status','Rank']
+if len(fencers) > 0:
+  df = pd.DataFrame(fencers)
+  df = df.loc[:,['name','location','event_date','event_name','competitor_Club(s)','competitor_Division','competitor_Country','competitor_Name','competitor_Status','competitor_Rank']]
+  df.columns = ['Tournament','Location','Date','Event','Club','Division','Country','Name','Status','Rank']
 
-# Filter to club
-df.Club = df.Club.fillna('')
-clubs = df.Club.unique()
-clubs = sorted(clubs)
-cpicked = st.multiselect('Filter by Club',clubs,[])
+  # Filter to club
+  df.Club = df.Club.fillna('')
+  clubs = df.Club.unique()
+  clubs = sorted(clubs)
+  cpicked = st.multiselect('Filter by Club',clubs,[])
 
-mask = [True if i in set(cpicked) else False for i in df.Club]
-df2 = df.loc[mask].reset_index(drop=True)
+  mask = [True if i in set(cpicked) else False for i in df.Club]
+  df2 = df.loc[mask].reset_index(drop=True)
 
-st.table(df2)
+  st.table(df2)
 
-st.download_button('Download as CSV',df2.to_csv(),file_name='fencers.csv')
+  st.download_button('Download as CSV',df2.to_csv(),file_name='fencers.csv')
