@@ -8,6 +8,8 @@ from datetime import datetime
 st.set_page_config(layout="wide")
 
 st.markdown('# Find Your Fencers')
+st.markdown('## Made by Wolf')
+
 
 def get_tournaments(from_date, to_date):
   url = f'https://fencingtimelive.com/tournaments/list/data?from={from_date}&to={to_date}'
