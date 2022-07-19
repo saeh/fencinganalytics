@@ -7,14 +7,14 @@ from datetime import datetime
 
 st.set_page_config(layout="wide")
 
-c1,c2 = st.columns(2)
+c1,c2 = st.columns([1,8])
 
 with c1:
   st.image('MO_mark_mono_neg.svg',width=200)
 with c2:
   st.markdown('# Find Your Fencers')
 
-st.markdown('## Made by Wolf')
+st.markdown('### Made by Wolf')
 
 
 def get_tournaments(from_date, to_date):
