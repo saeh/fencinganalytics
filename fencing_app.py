@@ -124,13 +124,16 @@ if len(fencers) > 0:
   #df.columns = ['Tournament','Location','Date','Event','Club','Division','Country','Name','Status','Rank']
 
   # Filter to club
-  df.Club = df.Club.fillna('')
-  clubs = df.Club.unique()
-  clubs = sorted(clubs)
-  cpicked = st.multiselect('Filter by Club',clubs,[])
+  if 'Club' in df.columns:
+    df.Club = df.Club.fillna('')
+    clubs = df.Club.unique()
+    clubs = sorted(clubs)
+    cpicked = st.multiselect('Filter by Club',clubs,[])
 
-  mask = [True if i in set(cpicked) else False for i in df.Club]
-  df2 = df.loc[mask].reset_index(drop=True)
+    mask = [True if i in set(cpicked) else False for i in df.Club]
+    df2 = df.loc[mask].reset_index(drop=True)
+  else:
+    df2 = df
 
   st.table(df2)
 
