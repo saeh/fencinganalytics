@@ -144,10 +144,12 @@ if len(fencers) > 0:
     st.table(df3)
     st.vega_lite_chart(df3, {
         "width": "container",
-        'mark': 'bar',
+        'mark': {
+          'type': 'bar',
+          'color': '#0CF66A',
+        },
         "encoding": {
           "x": {"field": "Date", "type": "nominal", "axis": {"labelAngle": 0}},
           "y": {"field": "Name", "type": "quantitative"},
-          "color": '#0CF66A',
         }
     })
