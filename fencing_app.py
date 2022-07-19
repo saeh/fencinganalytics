@@ -142,7 +142,7 @@ if len(fencers) > 0:
   df3 = df2.groupby('Date').count()['Name'].reset_index()
   if df3.shape[0]>0:
     st.table(df3)
-    st.vega_lite_chart(df3, {
+    st.vega_lite_chart(df3, spec={
         "width": "container",
         "height": 200,
         "mark": {"type":"bar","color":"#0CF66A"},
