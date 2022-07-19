@@ -15,7 +15,7 @@ with c2:
   st.markdown('# Fencers')
 
 st.subheader('Made by Wolf')
-st.markdown('<br>')
+st.markdown('---')
 
 def get_tournaments(from_date, to_date):
   url = f'https://fencingtimelive.com/tournaments/list/data?from={from_date}&to={to_date}'
