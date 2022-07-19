@@ -141,6 +141,7 @@ if len(fencers) > 0:
 
   df3 = df2.groupby('Date').count()['Name']
   if df3.shape[0]>0:
+    st.table(df3)
     st.vega_lite_chart(df3, {
         'mark': 'bar',
         "encoding": {
