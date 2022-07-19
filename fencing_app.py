@@ -131,4 +131,6 @@ if len(fencers) > 0:
 
   st.download_button('Download as CSV',df2.to_csv(),file_name='fencers.csv')
 
-  st.bar_chart(df2.groupby('Date').count()['name'])
+  df3 = df2.groupby('Date').count()['Name']
+  if df3.shape[0]>0:
+    st.bar_chart(df3)
