@@ -131,4 +131,4 @@ if len(fencers) > 0:
 
   st.download_button('Download as CSV',df2.to_csv(),file_name='fencers.csv')
 
-  st.bar_chart(df2.groupby('event_date').count()['name'])
+  st.bar_chart(df2.groupby('Date').count()['name'])
