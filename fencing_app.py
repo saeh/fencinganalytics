@@ -7,15 +7,15 @@ from datetime import datetime
 
 st.set_page_config(layout="wide")
 
-c1,c2 = st.columns([1,8])
+c1,c2 = st.columns([1,6])
 
 with c1:
   st.image('MO_mark_mono_neg.svg',width=200)
 with c2:
-  st.markdown('# Find Your Fencers')
+  st.markdown('# Fencers')
 
-st.markdown('### Made by Wolf')
-
+st.subheader('Made by Wolf')
+st.markdown('<br>')
 
 def get_tournaments(from_date, to_date):
   url = f'https://fencingtimelive.com/tournaments/list/data?from={from_date}&to={to_date}'
