@@ -7,8 +7,13 @@ from datetime import datetime
 
 st.set_page_config(layout="wide")
 
-st.image('MO_mark_mono_neg.svg',width=200)
-st.markdown('# Find Your Fencers')
+c1,c2 = st.columns(2)
+
+with c1:
+  st.image('MO_mark_mono_neg.svg',width=200)
+with c2:
+  st.markdown('# Find Your Fencers')
+
 st.markdown('## Made by Wolf')
 
 
