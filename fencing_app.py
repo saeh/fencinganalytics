@@ -115,7 +115,9 @@ for ename in epicked:
 
 if len(fencers) > 0:
   df = pd.DataFrame(fencers)
-  df = df.loc[:,['name','location','event_date','event_name','competitor_Club(s)','competitor_Division','competitor_Country','competitor_Name','competitor_Status','competitor_Rank']]
+  cols = ['name','location','event_date','event_name','competitor_Club(s)','competitor_Division','competitor_Country','competitor_Name','competitor_Status','competitor_Rank']
+  cols = [c for c in cols if c in df.columns]
+  df = df.loc[:,cols]
   df.columns = ['Tournament','Location','Date','Event','Club','Division','Country','Name','Status','Rank']
 
   # Filter to club
