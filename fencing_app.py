@@ -149,8 +149,6 @@ if len(fencers) > 0:
   if df3.shape[0]>0:
     st.table(df3)
     st.vega_lite_chart(df3, spec={
-        "width": "container",
-        "height": 200,
         "mark": {"type":"bar","color":"#0CF66A"},
         "encoding": {
           "x": {"field": "Date", "type": "nominal", "axis": {"labelAngle": 0}},
