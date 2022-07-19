@@ -146,7 +146,7 @@ if len(fencers) > 0:
         "width": "container",
         'mark': {
           'type': 'bar',
-          'color': '#0CF66A',
+          'color': {'expr': "#0CF66A"},
         },
         "encoding": {
           "x": {"field": "Date", "type": "nominal", "axis": {"labelAngle": 0}},
