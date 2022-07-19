@@ -154,4 +154,4 @@ if len(fencers) > 0:
           "x": {"field": "Date", "type": "nominal", "axis": {"labelAngle": 0}},
           "y": {"field": "Name", "type": "quantitative"}
         }
-    },use_container_width=True)
+    },use_container_width=True,height=400)
