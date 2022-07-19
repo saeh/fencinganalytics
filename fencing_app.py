@@ -133,4 +133,4 @@ if len(fencers) > 0:
 
   df3 = df2.groupby('Date').count()['Name']
   if df3.shape[0]>0:
-    st.bar_chart(df3)
+    st.line_chart(df3)
