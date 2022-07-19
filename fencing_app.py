@@ -7,7 +7,7 @@ from datetime import datetime
 
 st.set_page_config(layout="wide")
 
-st.image('MO_full_mono_pos.svg')
+st.image('MO_full_mono_neg_lge.png')
 st.markdown('# Find Your Fencers')
 st.markdown('## Made by Wolf')
 
