@@ -102,7 +102,7 @@ for tname in tpicked:
 
 # Next pick Event
 enames = [e['event_name'] + ' | ' + e['name'] for e in events]
-epicked = st.multiselect('Choose Events',enames,enames)
+epicked = st.multiselect('Choose Events',enames,[])
 
 # Next display Fencers in a table
 eids = []
