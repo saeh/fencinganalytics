@@ -139,7 +139,7 @@ if len(fencers) > 0:
 
   st.download_button('Download as CSV',df2.to_csv(),file_name='fencers.csv')
 
-  df3 = df2.groupby('Date').count()['Name']
+  df3 = df2.groupby('Date').count()['Name'].reset_index()
   if df3.shape[0]>0:
     st.table(df3)
     st.vega_lite_chart(df3, {
