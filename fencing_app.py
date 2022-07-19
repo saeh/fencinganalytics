@@ -118,7 +118,7 @@ if len(fencers) > 0:
   cols = ['name','location','event_date','event_name','competitor_Club(s)','competitor_Division','competitor_Country','competitor_Name','competitor_Status','competitor_Rank']
   cols = [c for c in cols if c in df.columns]
   df = df.loc[:,cols]
-  df = df.rename({'name':'Tournament', 'location':'Location','event_date':'Date','event_name':'Event',
+  df.rename({'name':'Tournament', 'location':'Location','event_date':'Date','event_name':'Event',
     'competitor_Club(s)':'Club','competitor_Division':'Division','competitor_Country':'Country',
     'competitor_Name':'Name','competitor_Status':'Status','competitor_Rank':'Rank'})
   #df.columns = ['Tournament','Location','Date','Event','Club','Division','Country','Name','Status','Rank']
